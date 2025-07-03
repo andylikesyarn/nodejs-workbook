@@ -9,10 +9,28 @@
 // "!skcoR tpircSavaJ"
 
 // -------------------------------------
+let inputString = "";
+if (typeof process.argv[2] === "undefined") {
+   inputString = "Javascript Rocks!";
+} else {
+   inputString = process.argv[2];
+}
 
-const inputString = "Javascript Rocks!";
 let reversedString = "";
 
 // Your code here
+
+function reverseString(inputString) {
+  var splitString = inputString.split("");
+  //split string between each letter
+
+  var reversedArray = splitString.reverse();
+  //reverse string
+
+  reversedString = reversedArray.join("");
+  //re-join reversed array to string
+}
+
+reverseString(inputString);
 
 console.log(reversedString);
