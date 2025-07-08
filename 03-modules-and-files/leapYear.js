@@ -9,3 +9,17 @@ REQUIREMENTS:
     - "2024 is a leap year!"
     - "1979 is not a leap year!"
 */
+
+import moment from "moment";
+//const moment = require("moment");
+
+let year = process.argv[2];
+let date = `${year}-01-01`;
+let yes = "is a leap year!";
+let no = "is not a leap year :(";
+
+if (moment(date).isLeapYear()) {
+  console.log(year + " " + yes);
+} else {
+  console.log(year + " " + no);
+}
