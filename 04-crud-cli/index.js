@@ -5,17 +5,40 @@ import { readFile } from "fs";
 
 // Get all books and print them to the console
 function getAllBooks() {
-  // TODO: Read the file, parse the JSON, and log each book's title and text
+  //Read the file,
+  readFile("./data.json", "utf-8", (err, data) => {
+    if (err) {
+      console.error("Error reading file:", err);
+      return;
+    }
+    // parse the JSON,
+    const books = JSON.parse(data);
+    // log each book's title and text
+    console.log(books);
+  });
 }
 
 // Get one book by index and print it to the console
 function getOneBook(index) {
-  // TODO: Read the file, parse the JSON, and log only the book at the given index
+  //Read the file,
+  readFile("./data.json", "utf-8", (err, data) => {
+    if (err) {
+      console.error("Error reading file:", err);
+      return;
+    }
+    // parse the JSON,
+    const books = JSON.parse(data);
+    // log each book's title and text
+    console.log(books[index]);
+  });
 }
+
 
 // Read user input from the command line
 const action = process.argv[2]; // e.g. "getAllBooks"
 const bookIndex = process.argv[3]; // e.g. "3"
+
+
 
 // Run the correct function based on the user's input
 if (action === "getAllBooks") {
