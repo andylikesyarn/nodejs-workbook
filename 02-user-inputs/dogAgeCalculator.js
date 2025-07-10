@@ -20,6 +20,16 @@ node dogAgeCalculator.js
 Year 1 of a dog's life is 15 dog years
 - Year 2 is the equivalent of another 9 years.
 - Every year after that is the equivalent of another 5 years.
+           .-._   _ _ _ _ _ _ _ _
+.-''-.__.-'00  '-' ' ' ' ' ' ' ' '-.
+'.___ '    .   .--_'-' '-' '-' _'-' '._
+ V: V 'vv-'   '_   '.       .'  _..' '.'.
+   '=.____.=_.--'   :_.__.__:_   '.   : :
+           (((____.-'        '-.  /   : :
+ snd                         (((-'\ .' /
+                           _____..'  .'
+                          '-._____.-'
+
 -----------------------------------------------------
 */
 
