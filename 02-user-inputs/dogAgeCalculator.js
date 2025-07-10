@@ -1,5 +1,7 @@
 /* 
-
+-----------------------------------------------------
+/////////// INSTRUCTIONS ////////////
+-----------------------------------------------------
 Your task: Make a dog age calculator with Node.js!
 
 Follow the instructions in the README.md file in this folder.
@@ -10,6 +12,7 @@ node dogAgeCalculator.js
 Year 1 of a dog's life is 15 dog years
 - Year 2 is the equivalent of another 9 years.
 - Every year after that is the equivalent of another 5 years.
+-----------------------------------------------------
 */
 
 //dog name param
@@ -20,16 +23,15 @@ let dogAge = Number(process.argv[3]);
 
 //function
 function calculateDogAge(dogAge) {
-   //error handling
+  //error handling
   if (dogAge < 0 || isNaN(dogAge)) {
     return `Please enter a positive number.`;
 
-  //dog under 1 yo (this function handles non-integers)
+    //dog under 1 yo (this function handles non-integers)
   } else if (dogAge <= 1) {
     return dogAge * 15;
 
-  
-  //dog 1-2 yo (this function handles non-integers)
+    //dog 1-2 yo (this function handles non-integers)
   } else if (dogAge <= 2) {
     return 15 + (dogAge - 1) * 9;
 
@@ -43,7 +45,7 @@ let ageInDogYears = calculateDogAge(dogAge);
 //returns 'plz insert a positive #' if dog age NaN
 if (isNaN(ageInDogYears)) {
   console.log(ageInDogYears);
-  
+
   //if dog has valid age, returns specified format for age statement
 } else {
   console.log(
