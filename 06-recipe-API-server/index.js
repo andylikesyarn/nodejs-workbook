@@ -156,14 +156,4 @@ app.get("/get-one-recipe/:index", async (req, res) => {
   res.send(JSON.stringify(recipe));
 });
 
-// TODO: API Endpoint for handling GET requests to /delete-one-recipe/:index
-app.get("/get-one-recipe/:index", async (req, res) => {
-  const recipeIndex = req.params.index;
-  const recipe = await getOneRecipe(recipeIndex);
-
-  // send the books data as JSON in the response
-  res.send(JSON.stringify(recipe));
-});
-
-
 // TODO: API Endpoint for handling GET requests to /update-one-recipe-name/:index/:newName
