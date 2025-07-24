@@ -17,6 +17,7 @@ The instructor will provide:
 
 As the backend developer, your task is to build the Express API server that handles HTTP `GET` and `POST` requests to the following endpoints:
 
+<<<<<<< HEAD
 1. GET `/get-all-animals`
 2. GET `/get-one-animal/:name`
 3. GET `/delete-one-animal/:name`
@@ -30,6 +31,19 @@ As the backend developer, your task is to build the Express API server that hand
 - 🏆 Add a `/search-animals/:term` endpoint that retrieves all animals whose names contain the search term
 - 🏆 Add a `/get-animals-by-category/:category` endpoint that retrieves all animals that belong to a specific category (e.g., mammal or bird).
 - 🏆 Add a `/get-animals-by-habitat/:habitat` endpoint that retrieves all animals that live in a particular habitat (land, water, or air).
+=======
+1. `/get-all-animals`
+2. `/get-one-animal/:name`
+3. `/delete-one-animal/:name`
+4. `/add-one-animal`
+5. `/update-one-animal`
+
+**Stretch Goals (optional):**
+
+- 🏆 Add error handling
+- 🏆 Add an endpoint for filtering animals (e.g., by category or habitat)
+- 🏆 Add a `/search-animals/:term` endpoint that retrieves all animals whose names contain the search term
+>>>>>>> temp
 
 ---
 
@@ -37,6 +51,7 @@ As the backend developer, your task is to build the Express API server that hand
 
 To get started, you will need to do the following:
 
+<<<<<<< HEAD
 1. In the Terminal, open up the `07-animals-API-server-SQL` project folder. You should see there's two folders here:
    - `client` which holds the completed frontend code
    - `server` which will hold your server/API code
@@ -45,6 +60,12 @@ To get started, you will need to do the following:
 1. In the Terminal, in the `server` folder, run `npm install express` and `npm install pg`. This will install 2 packages, `express` and `pg`, which you should then see listed in your `package.json` file as dependencies.
 1. In the `package.json` file in the `server` folder, add the key/value pair `"type": "module"` in order to use the modern ES Module syntax.
 1. In the your server's `src` folder, create a `config.js` file. This file will contain the password and access credentials to the database. Your instructor will provide this to you during lecture.
+=======
+1. In the Terminal, in your `07-animals-API-server-SQL` project folder, run `npm init -y` to initialize your `package.json` file.
+1. In the Terminal, in your `07-animals-API-server-SQL` project folder, run `npm install express` and `npm install pg`. This will install 2 packages, `express` and `pg`, which you should then see listed in your `package.json` file as dependencies.
+1. In the `package.json` file, add the key/value pair `"type": "module"` in order to use the modern ES Module syntax.
+1. In the `src` folder, create a `config.js` file. This file will contain the password and access credentials to the database. Your instructor will provide this to you during lecture.
+>>>>>>> temp
 1. Write your server code in the `index.js` file:
 
    - Set up your Express server using the boilerplate code

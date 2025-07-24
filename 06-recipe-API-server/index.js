@@ -40,18 +40,105 @@ app.listen(port, () => {
   console.log(`My server is listening on port ${port}!`);
 });
 
+<<<<<<< HEAD
+=======
+// ----------------------
+// Arianna's code
+// ----------------------
+/*
+// --------------------------
+// WRITING OUR FIRST GET REQUEST
+// --------------------------
+// Handle a GET request to the API endpoint "/" which is the default endpoint, kind of like the home page
+
+
+// Handle a GET request to get the user's name
+app.get("/get-user-name/:userName", (req, res) => {
+  res.send(`Hello World, ${req.params.userName}!`);
+});
+
+// we will call the callback function to handle the incoming GET request
+
+//app.get("/get-user", (req, res) => {
+ // const myFormData = {
+  //  name: "Andy",
+ //   email: "text@gmail.com",
+ // };
+  // turn our Javascript data into JSON
+  //const myFormDataJSON = JSON.stringify(myFormData);
+  //   // send the JSON data back in the response
+  res.send(myFormDataJSON);
+});*/
+/*
+// -------------------------
+// HELPER FUNCTIONS
+// -------------------------
+
+// When I declare a variable called books inside this function, it is scoped to that function, meaning I can only access it within that function
+
+  // this syntax uses call back function
+  // const booksData = fs.readFile("../data.json", "utf8", (err, data) => {
+  //   return data;
+  // });
+  // return JSON.parse(booksData);
+
+  // this syntax uses async /await — more modern approach
+  const data = await fs.readFile("../data.json", "utf8");
+  return JSON.parse(data);
+}
+
+async function getOneBook(bookIndex) {
+  const data = await fs.readFile("../data.json", "utf8");
+  const parsedData = JSON.parse(data);
+  const parsedBook = parsedData[bookIndex];
+  return parsedBook;
+}
+
+// -------------------------
+// API ENDPOINTS
+// -------------------------
+// handle GET requests for getting all the books from data.json
+app.get("/get-all-books", async (req, res) => {
+  const books = await getAllBooks();
+
+  // send the books data as JSON in the response
+  res.send(JSON.stringify(books));
+});
+
+// getting one book by its index
+app.get("/get-one-book/:index", async (req, res) => {
+  // we got the user's info
+  const bookIndex = req.params.index;
+
+  // we need to get the book from the data.json
+  const book = await getOneBook(bookIndex);
+
+  // then send the book back in the response
+  res.send(JSON.stringify(book));
+
+  console.log(`The user is trying to get the book at index ${bookIndex}`);
+});
+
+*/
+
+>>>>>>> temp
 // -------------------------
 // HELPER FUNCTIONS
 // -------------------------
 //this needs to be able to access the recipes
 async function getAllRecipes() {
+<<<<<<< HEAD
   //this is going to read my data from the file specified
   const data = await fs.readFile("./data.json", "utf8");
   //this will give me a usable version of the data for the app
+=======
+  const data = await fs.readFile("./data.json", "utf8");
+>>>>>>> temp
   return JSON.parse(data);
 }
 
 async function getOneRecipe(recipesIndex) {
+<<<<<<< HEAD
   //this is going to read my data from the file specified
   const data = await fs.readFile("./data.json", "utf8");
   //this will give me a usable version of the data for the app
@@ -59,6 +146,11 @@ async function getOneRecipe(recipesIndex) {
   //this pulls the specific recipe from the set of recipes
   const parsedRecipe = parsedData[recipesIndex];
 
+=======
+  const data = await fs.readFile("./data.json", "utf8");
+  const parsedData = JSON.parse(data);
+  const parsedRecipe = parsedData[recipesIndex];
+>>>>>>> temp
   return parsedRecipe;
 }
 
@@ -68,7 +160,10 @@ async function getOneRecipe(recipesIndex) {
 
 //handle GET requests for getting all the recipes from data.json
 app.get("/get-all-recipes", async (req, res) => {
+<<<<<<< HEAD
   //set recipes == to result of running get all recipes
+=======
+>>>>>>> temp
   const recipes = await getAllRecipes();
 
   // send the recipes data as JSON in the response
@@ -77,12 +172,21 @@ app.get("/get-all-recipes", async (req, res) => {
 
 // TODO: API Endpoint for handling GET requests to /get-one-recipe/:index
 app.get("/get-one-recipe/:index", async (req, res) => {
+<<<<<<< HEAD
   //set recipeIndex == to the index at the wndpoint
 
   const recipeIndex = req.params.index;
   //set recipe == to result of running get one recipe
+=======
+  const recipeIndex = req.params.index;
+>>>>>>> temp
   const recipe = await getOneRecipe(recipeIndex);
 
   // send the books data as JSON in the response
   res.send(JSON.stringify(recipe));
 });
+<<<<<<< HEAD
+=======
+
+// TODO: API Endpoint for handling GET requests to /update-one-recipe-name/:index/:newName
+>>>>>>> temp

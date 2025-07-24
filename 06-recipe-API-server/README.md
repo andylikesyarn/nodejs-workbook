@@ -20,6 +20,7 @@ You'll use Express to build a web server that exposes API endpoints for reading 
 To get started, you will need to do the following:
 
 1. In your `06-recipe-API-server` project folder, run `npm init -y` to initialize your `package.json` file.
+<<<<<<< HEAD
    <<<<<<< HEAD
 1. In the Terminal, in your `07-animals-API-server-SQL` project folder, run `npm install express` to install the `express` package. You should then see `express` listed in your `package.json` file as a dependency.
 1. In the `package.json` file, add the key/value pair `"type": "module"` in order to use the modern ES Module syntax.
@@ -33,6 +34,20 @@ To get started, you will need to do the following:
 1. Write your server code in the src/index.js file:
 
    > > > > > > > b212218 (updating recipe app)
+=======
+<<<<<<< HEAD
+DONE
+
+2. In the `package.json` file, add the key/value pair `"type": "module"` in order to use the modern ES Module syntax.
+DONE
+
+3. Write your server code in the src/index.js file:
+=======
+1. In the Terminal, in your `07-animals-API-server-SQL` project folder, run `npm install express` to install the `express` package. You should then see `express` listed in your `package.json` file as a dependency.
+1. In the `package.json` file, add the key/value pair `"type": "module"` in order to use the modern ES Module syntax.
+1. Write your server code in the src/index.js file:
+>>>>>>> 2935a08 (added npm install package instructions in READMEs and updated boilerplate code)
+>>>>>>> temp
 
    - Set up your Express server using the boilerplate code
    - Define your API endpoints using `app.get()`
@@ -195,3 +210,12 @@ When the app receives a `GET` request to update the name a specific recipe, it d
 ##### Example Request
 
 `http://localhost:3000/update-one-recipe/1/Lasagna`
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+>>>>>>> temp
