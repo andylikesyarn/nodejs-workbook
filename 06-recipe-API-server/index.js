@@ -49,7 +49,6 @@ async function getAllRecipes() {
   //this is going to read my data from the file specified
   const data = await fs.readFile("./data.json", "utf8");
   //this will give me a usable version of the data for the app
-  const data = await fs.readFile("./data.json", "utf8");
   return JSON.parse(data);
 }
 
@@ -60,9 +59,7 @@ async function getOneRecipe(recipesIndex) {
   const parsedData = JSON.parse(data);
   //this pulls the specific recipe from the set of recipes
   const parsedRecipe = parsedData[recipesIndex];
-  const data = await fs.readFile("./data.json", "utf8");
-  const parsedData = JSON.parse(data);
-  const parsedRecipe = parsedData[recipesIndex];
+  
   return parsedRecipe;
 }
 
@@ -88,9 +85,6 @@ app.get("/get-one-recipe/:index", async (req, res) => {
 
   const recipeIndex = req.params.index;
   //set recipe == to result of running get one recipe
-
-  const recipeIndex = req.params.index;
-
   const recipe = await getOneRecipe(recipeIndex);
 
   // send the books data as JSON in the response
