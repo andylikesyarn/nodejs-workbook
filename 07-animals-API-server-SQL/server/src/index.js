@@ -37,10 +37,19 @@ async function getOneAnimal(animalName) {
   return result.rows[0];
 }
 // Helper function for /delete-one-animal/:name
+async function deleteOneAnimal(name) {
+  //sets fields we're inputting / changing
+  const animalName = name;
+  await db.query("DELETE FROM animals WHERE name = $1", [animalName]);
+}
+
 // Helper function for /add-one-animal
 async function addOneAnimal(animal) {
+  //await result of database query
   await db.query(
+    //sql query inserting vals into animal
     "INSERT INTO animals (name, category, can_fly, lives_in) VALUES ($1, $2, $3, $4)",
+    //
     [animal.name, animal.category, animal.can_fly, animal.lives_in]
   );
 }
@@ -71,17 +80,47 @@ app.get("/get-all-animals", async (req, res) => {
 // res.json() sends a response as a JSON object
 // GET /get-one-animal/:name
 app.get("/get-one-animal/:name", async (req, res) => {
+  //animalName = the name pulled from the url param
   const animalName = req.params.name;
+  //set animal = to the result of the function getOneAnimal
   const animal = await getOneAnimal(animalName);
+  //display result of getOneAnimal, wich should be an object with all its attributes
   res.json(animal);
 });
+
 // GET /delete-one-animal/:name
+app.delete("/delete-one-animal/:name", async (req, res) => {
+  //deleteAnimal = the name pulled from the url param
+  const deleteAnimal = req.params.name;
+  //run function to delete animal asynchronously
+  await deleteOneAnimal(deleteAnimal);
+  //then return AnimalName was deleted
+  res.json(`${deleteAnimal} was deleted`);
+
+  /*try {
+    await deleteOneAnimal(deleteAnimal);
+    res.json({ success: true, message: "Animal deleted." });
+  } catch (err) {
+    //if it does not work, send error message.
+    res.status(400).json({ success: false, error: err.message });
+  }*/
+});
+
 // POST /add-one-animal
 app.post("/add-one-animal", async (req, res) => {
+  //animal is pulled from request body and saved here
   const newAnimal = req.body;
-  addOneAnimal(newAnimal);
-  res.send("The animal was successfully added!");
+  //try running addOneAnimal
+  try {
+    await addOneAnimal(newAnimal);
+    //if it works, display Animal Added
+    res.json({ success: true, message: "Animal added." });
+  } catch (err) {
+    //if it does not work, send error message.
+    res.status(400).json({ success: false, error: err.message });
+  }
 });
+
 // POST /update-one-animal
 //defining a post request at the endpoint update-one-animal
 app.post("/update-one-animal", async (req, res) => {
